@@ -1,0 +1,7 @@
+<!--pages/home/home.wxml-->
+<view>
+    <text>pages/home/home.wxml</text>
+    <view>
+         {{ token }} / {{num}}
+    </view>
+</view>
