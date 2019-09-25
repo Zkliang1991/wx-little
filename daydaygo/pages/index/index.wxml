@@ -13,4 +13,7 @@
     <view class="msg" >
     <text bindtap="changeMsg" class="user-motto">{{msg}} -- {{count}}</text>
   </view>
+  <view>
+    <button bindtap="gotoHome" type="primary"> 开启购物之旅 </button>
+  </view>
 </view>

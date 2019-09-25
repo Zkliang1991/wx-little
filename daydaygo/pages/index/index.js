@@ -14,6 +14,14 @@ Page({
     token:app.globalData.token
   },
 
+  gotoHome(){
+    console.log("qqq");
+    wx.switchTab({
+      url:"../home/home"
+    })
+  },
+
+
   countAdd(){
      this.setData({
        count:++this.data.count

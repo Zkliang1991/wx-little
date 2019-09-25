@@ -1,2 +1,11 @@
 <!--components/demo/demo.wxml-->
-<text>components/demo/demo.wxml</text>
+<view style="border:4rpx solid red">
+    <view> 
+        demo - demo - component 组件 
+    </view>
+    <Swipe></Swipe>
+    <p></p>
+    <view bindtap="changeCount" data-id="100" > count == {{count}}</view>
+    <view> properties == {{clientX}} -- {{word}} -- {{msg}}</view>
+    <view> <button type="warn" bindtap="changeparent"> 子组件通过自定义事件去修改父组件 </button> </view>
+</view>

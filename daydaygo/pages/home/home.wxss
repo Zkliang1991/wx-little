@@ -1,1 +1,25 @@
 /* pages/home/home.wxss */
+
+.rpx-box{
+    width:200rpx;
+    height:200rpx;
+    color:red;
+    background: yellowgreen;
+}
+
+.h-label{
+    display: block;
+    margin:10px;
+    border:2px solid darkred;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+}
+
+.h-label input{
+    color:#000;
+    font-size:20px;
+    width:60%;
+    border:1px solid darkgreen;
+
+}

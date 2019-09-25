@@ -1,20 +1,26 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/home/home",
     "pages/index/index",
+   
+   
     "pages/logs/logs",
-    "pages/mine/mine",
+    
     "pages/search/search",
     "pages/find/find",
     "pages/cart/cart"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#0f0",
+    "navigationBarBackgroundColor": "#ccc",
     "navigationBarTitleText": "每日购",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "usingComponents":{
+    "AllIn":"/components/allin/allin"
+  },
   "tabBar":{
     "color":"#2c2c2c",
     "selectedColor":"#1afa29",

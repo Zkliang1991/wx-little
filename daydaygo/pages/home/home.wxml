@@ -1,7 +1,87 @@
 <!--pages/home/home.wxml-->
 <view>
     <text>pages/home/home.wxml</text>
-    <view>
-         {{ token }} / {{num}}
+    <view bindtap="changeNum">
+         {{ token }} / {{num}}  
     </view>
+    <AllIn/> 
+
+    <view class="opt" id="{{id}}" bindtap="changeIdx" > {{ word }} -- {{id}}</view>
+    <view> <input type="text" bindinput="getWord" /></view>
+    <view bindtap="changeFlag"> {{flag ? '国庆去游山玩水':"我要在家写小程序代码"}}</view>
+    <view data-flag="{{flag}}" wx:if="{{!flag}}" >
+        <image width="250" height="250" src="{{imgUrl}}"></image>
+        <view>
+            <a href="{{link}}">点击进入 千锋教育 </a>
+        </view>
+    </view>
+    <view wx:else>  
+        wx:if && wx:else 条件渲染 
+    </view>
+    <view hidden="{{flag}}"> hidden  就简单的多，组件始终会被渲染，只是简单的控制显示与隐藏。</view>
+    <view> <switch checked="{{!flag}}" bindchange="changeCheck" > </switch></view>
+
+    <view wx:for="{{todos}}" wx:key="{{index}}">
+        {{index}} --- {{item.names}}/ {{item.age}} / {{item.word}}
+    </view>
+
+    <view wx:if="{{flag}}">
+        <view wx:for="{{number}}" wx:for-index="ii" wx:for-item="i" wx:key="{{i}}" >
+            <view wx:for="{{number}}" wx:for-index="jj" wx:for-item="j" wx:key="{{j}}">
+                <view wx:if="{{i<=j}}" >
+                    <view> 
+                        {{i}} * {{j}} = {{i*j}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        <button data-word="{{word}}" id="tapTest" type="primary" data-hi="WeChat" bindtap="tapName"> Click me! == {{clientX}} </button>
+
+        <view bindtap="parent">
+
+            <view style="color:green" bindtap="childOne"> 
+                冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。
+            </view>
+            <view style="color:blue" catchtap="childTwo">
+                非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递
+            </view>
+            <view style="color:red">
+                bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。
+            </view>
+        </view>
+    </view>
+    <view class="rpx-box"> rpx 测试</view>
+    <template name="users">
+        <view>
+            <view>
+                username === {{username}}
+            </view>
+            <view>
+                salary == {{salary}}
+            </view>
+            <view>
+                address == {{address}}
+            </view>
+        </view>
+    </template>
+
+    <template is="users"  data="{{ ...userData }}" ></template>
+
+    <import src="/tpls/like.wxml" />
+    <template is="like"  data="{{ ...likeData }}" ></template>
+    <view> num === {{num }}</view>
+    <Demo bindchangenumber="getNewNumber" word="{{word}}" clientX="{{clientX}}" msg="Are you ok"></Demo>
+
+    <button type="primary" bindtap="openModal">打开 modal  </button>
+    <button type="warn" bindtap="openactionsheet">打开 actionsheet  </button>
+
+    <import src="/tpls/actionsheet.wxml" />
+    <template is="actionsheet" data="{{...actionData }}"> </template>
+    <button type="primary" bindtap="openMyAction">打开 自定义 action   </button>
+
+    <import src="/tpls/login.wxml" />
+     <template is="login" data="{{...loginData }}"> </template>
 </view>

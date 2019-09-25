@@ -1,2 +1,21 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view  wx:if="{{show}}">
+    <progress  percent="{{percent}}"  show-info stroke-width="12" color="deeppink" />
+</view>
+<view wx:else>
+    <view>这是我的幸福小窝 </view>
+    <view>
+        <swiper
+        indicator-dots="{{true}}"
+        autoplay="{{true}}" 
+        interval="{{2000}}" 
+        duration="{{1000}}"
+        >
+            <block wx:for="{{banner}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image src="{{item.images.large}}" class="slide-image"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>

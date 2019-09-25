@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#0f0",
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "Demo":"/components/demo/demo"
+  }
 }

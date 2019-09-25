@@ -1,0 +1,4 @@
+<!--components/swipe/swipe.wxml-->
+<view>
+ swipe===>组件
+</view>

@@ -1,0 +1,6 @@
+<template name="like">
+    <view>
+        <view > names=={{names}} </view>
+        <view>点赞次数  count == {{count}}</view>
+    </view>
+</template>

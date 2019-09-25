@@ -1,1 +1,6 @@
 /* pages/mine/mine.wxss */
+
+swiper ,  swiper-item ,  .slide-image{
+    width:100%;
+    height:500rpx;
+}
